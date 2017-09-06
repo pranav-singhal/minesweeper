@@ -83,8 +83,15 @@ function makeGameTable(){
 makeGameTable();
 $("td").on("contextmenu",function(event){
   event.preventDefault();
-  $(this)[0].innerHTML="flag"
-})
+  console.log($(this).html());
+  if($(this)[0].innerHTML=="flag"){
+    $(this)[0].innerHTML="";
+  }
+  else{
+    $(this)[0].innerHTML="flag";
+
+  }
+});
 $("td").on("click",function check(){
 
 var currentCell=this;
